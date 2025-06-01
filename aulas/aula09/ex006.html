@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area {
+            background: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrou()" onmouseout="saiu()">
+        Interaja...
+    </div>
+
+    <div class="soma">
+        <H1>Interaja para somar</H1>
+        <input type="number" id="num1"></imput> +
+        <input type="number" id="num2"></input>
+        <button onclick="somar()">Somar</button>
+        <div class="res">Resultado</div>
+    </div>
+
+    <script>
+        var a = window.document.getElementById('area');
+        function clicar() {
+            a.innerText = 'Clicou!';
+        }
+        function entrou() {
+            a.innerText = 'Entrou!';
+        }
+        function saiu() {
+            a.innerText = 'Saiu!';
+        }
+
+        function somar() {
+            var n1 = document.querySelector('#num1').value;
+            var n2 = document.querySelector('#num2').value;
+            var result = parseInt(n1) + parseInt(n2);
+            var res = document.querySelector('.res');
+            res.innerHTML = 'Resultado: ' + result;
+            
+
+        }
+    </script>
+</body>
+</html>
